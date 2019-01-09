@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
 "productName": "Global Gam Jam 2019",
-"dataUrl": ".data.unityweb",
-"wasmCodeUrl": ".wasm.code.unityweb",
-"wasmFrameworkUrl": ".wasm.framework.unityweb",
+"dataUrl": "Global-Game-Jam-2019.data.unityweb",
+"wasmCodeUrl": "Global-Game-Jam-2019.wasm.code.unityweb",
+"wasmFrameworkUrl": "Global-Game-Jam-2019.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
