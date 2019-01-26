@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 2010994213}
   - component: {fileID: 2010994215}
   - component: {fileID: 2010994214}
+  - component: {fileID: 2010994216}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -528,7 +529,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010994210}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
@@ -566,6 +567,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf4bb6d27cc870c41889c4a86f632bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earthPV: 3
+--- !u!114 &2010994216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010994210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068481a431352e339a746b0867fd4523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2102615624
