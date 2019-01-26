@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6632d94600023b039a7477a6598fd462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 200
+  moveSpeed: 300
 --- !u!95 &724998819
 Animator:
   serializedVersion: 3
@@ -482,7 +482,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -581,9 +581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemy: {fileID: 7109248370775604355, guid: 6d5acf7d930a04d428175ba006811cba, type: 3}
-  numberOfSpawns: 50
+  numberOfSpawns: 20
   spawnValues: {x: 7.59, y: 5.92, z: 0}
-  spawnWait: 0.5
+  spawnWait: 1
   startWait: 1
   waveWait: 4
 --- !u!1 &1560781369
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4bb6d27cc870c41889c4a86f632bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  earthPV: 30
+  earthPV: 3
 --- !u!114 &2010994216
 MonoBehaviour:
   m_ObjectHideFlags: 0
