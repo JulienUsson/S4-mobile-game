@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +11,6 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait = 3;
-    private float timerWait = 1f;
     public float timerLeft = 30f;
     public TextMeshProUGUI timerText;
 
@@ -38,8 +36,8 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < numberOfSpawns; i++)
             {
                 Debug.Log("IValue: " + i);
-                bool isLeft = (UnityEngine.Random.value > 0.5f);
-                Vector3 spawnPosition = new Vector3((isLeft) ?  -spawnValues.x : spawnValues.x, UnityEngine.Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+                bool isLeft = (Random.value > 0.5f);
+                Vector3 spawnPosition = new Vector3((isLeft) ?  -spawnValues.x : spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Instantiate(ennemy, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait);
             }
