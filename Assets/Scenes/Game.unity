@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 2010994212}
   - component: {fileID: 2010994211}
   - component: {fileID: 2010994213}
+  - component: {fileID: 2010994215}
   - component: {fileID: 2010994214}
   m_Layer: 0
   m_Name: Earth
@@ -555,6 +556,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!114 &2010994215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010994210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4bb6d27cc870c41889c4a86f632bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2102615624
 GameObject:
   m_ObjectHideFlags: 0
