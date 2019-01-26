@@ -37,8 +37,8 @@ public class DialogManager : MonoBehaviour
         if (currentIndex < dialogs.Count)
         {
             Dialog currentDialog = dialogs[currentIndex];
-            speakerText.text = currentDialog.speaker + " :";
-            contentText.text = currentDialog.content;
+            speakerText.text = currentDialog.speaker.ToUpper() + " :";
+            contentText.text = currentDialog.content.ToUpper();
         }
         else
         {
