@@ -92,6 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95d78e1f6fc45447b294857a0d4081f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 200
   ennemy: {fileID: 7109248370775604355, guid: 6d5acf7d930a04d428175ba006811cba, type: 3}
-  spawnRate: 0.8
+  spawnRate: 1
