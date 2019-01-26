@@ -22,7 +22,9 @@ public class DialogManager : MonoBehaviour
 
         currentIndex = -1;
         dialogs = new List<Dialog>();
-        dialogs.Add(new Dialog() { speaker = "alien", content = "Dumb aliens ! What are you still doing here ? We (the space highway company) have noticed you 10 years ago that you must have evacuated your planet by today as the InterGalac733 will pass through it. Sorry but we break for nobody." });
+        dialogs.Add(new Dialog() { speaker = "alien", content = "Dumb aliens ! What are you still doing here ? We, the space highway company, have noticed you 10 years ago." });
+        dialogs.Add(new Dialog() { speaker = "alien", content = " You must have evacuated your planet by today as the InterGalac733 will pass through it." });
+        dialogs.Add(new Dialog() { speaker = "alien", content = "Sorry but we break for nobody." });
         dialogs.Add(new Dialog() { speaker = "general", content = "Sorry to interrupt, but our radar has detected a very cute and unusual space object that will reach our planet in few minutes." });
         dialogs.Add(new Dialog() { speaker = "general", content = "It seems that we have a problem. We are under attack. Cute objects are emerging on our radar. What should we do ?" });
         dialogs.Add(new Dialog() { speaker = "general", content = "We must protect our HOME. General please deploy the S4, the Super Secret Space Shield !" });
@@ -46,7 +48,7 @@ public class DialogManager : MonoBehaviour
             Dialog currentDialog = dialogs[currentIndex];
             speakerImage.sprite = currentDialog.speaker == "alien" ? alienSprite : generalSprite;
             speakerText.text = currentDialog.speaker.ToUpper() + " :";
-            contentText.text = currentDialog.content;
+            contentText.text = currentDialog.content.ToUpper();
         }
         else
         {
