@@ -45,11 +45,11 @@ public class DialogManager : MonoBehaviour
             if (currentIndex == 1)
             {
                 highway.SetActive(true);
+                home.SetActive(false);
             }
             else if (currentIndex == 2)
             {
                 highway.SetActive(false);
-                home.SetActive(false);
                 enemy.SetActive(true);
             }
             else if (currentIndex == 3)
@@ -66,8 +66,6 @@ public class DialogManager : MonoBehaviour
         if (currentIndex == 3)
         {
             float newX = Mathf.Sin(Time.time * speed) * amount;
-            Debug.Log(newX);
-            Debug.Log(home.transform.position);
             home.transform.position += new Vector3(newX, 0, 0);
         }
     }
