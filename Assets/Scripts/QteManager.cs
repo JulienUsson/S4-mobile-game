@@ -7,12 +7,7 @@ using UnityEngine.UI;
 public class QteManager : MonoBehaviour
 {
     public int qteNumber = 10;
-    public Image key1;
-    public Image key2;
-    public Image key3;
-    public Image key4;
-    public Image key5;
-    public Image key6;
+    public Image qteImage;
 
     private List<XboxKeyEnum> keys;
     private Sprite aSprite;
@@ -81,51 +76,11 @@ public class QteManager : MonoBehaviour
     {
         try
         {
-            key1.sprite = GetSpriteForKey(keys[0]);
+            qteImage.sprite = GetSpriteForKey(keys[0]);
         }
         catch (ArgumentOutOfRangeException)
         {
-            key1.enabled = false;
-        }
-        try
-        {
-            key2.sprite = GetSpriteForKey(keys[1]);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            key2.enabled = false;
-        }
-        try
-        {
-            key3.sprite = GetSpriteForKey(keys[2]);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            key3.enabled = false;
-        }
-        try
-        {
-            key4.sprite = GetSpriteForKey(keys[3]);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            key4.enabled = false;
-        }
-        try
-        {
-            key5.sprite = GetSpriteForKey(keys[4]);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            key5.enabled = false;
-        }
-        try
-        {
-            key6.sprite = GetSpriteForKey(keys[5]);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            key6.enabled = false;
+            qteImage.enabled = false;
         }
     }
 }
