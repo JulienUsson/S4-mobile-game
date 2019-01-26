@@ -7,7 +7,7 @@ public class GameOverScreen : MonoBehaviour
 {
     void Update()
     {
-        if (Input.anyKeyDown && !Input.GetKey(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
+        if (Input.anyKeyDown)
         {
             SceneManager.LoadScene(1);
         }
