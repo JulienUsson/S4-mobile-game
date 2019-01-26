@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class EarthController : MonoBehaviour
 {
     public int earthPV = 3;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,12 @@ public class EarthController : MonoBehaviour
     {
         earthPV --;
 
+        anim.SetBool("Hitted", true);
+
+        anim.SetInteger("PV", earthPV);
+        
         if (earthPV < 1)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }
