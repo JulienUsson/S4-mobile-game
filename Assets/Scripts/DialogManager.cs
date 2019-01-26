@@ -7,9 +7,8 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject happyHome;
-    public GameObject hitHome;
-    public GameObject Enemy;
+    public GameObject home;
+    public GameObject enemy;
     public Image speakerImage;
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI contentText;
@@ -40,27 +39,30 @@ public class DialogManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
+            Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();
             if (currentIndex == 2)
             {
-                happyHome.SetActive(false);
-                Enemy.SetActive(true);
+                home.SetActive(false);
+                enemy.SetActive(true);
             }
             else if (currentIndex == 3)
             {
-                hitHome.SetActive(true);
-                Enemy.SetActive(false);
+                home.SetActive(true);
+                enemy.SetActive(false);
+                homeAnimator.Play("AnimationEarth-hit", 0);
             }
             else if (currentIndex == 4)
             {
-                hitHome.SetActive(false);
-                happyHome.SetActive(true);
+                homeAnimator.Play("AnimationEarthOk-3pv", 0);
             }
         }
         if (currentIndex == 3)
         {
-            float newX = hitHome.transform.position.x + Mathf.Sin(Time.time * speed) * amount;
-            hitHome.transform.SetPositionAndRotation(new Vector3(newX, hitHome.transform.position.y, hitHome.transform.position.z), Quaternion.identity);
+            float newX = Mathf.Sin(Time.time * speed) * amount;
+            Debug.Log(newX);
+            Debug.Log(home.transform.position);
+            home.transform.position += new Vector3(newX, 0, 0);
         }
     }
 
