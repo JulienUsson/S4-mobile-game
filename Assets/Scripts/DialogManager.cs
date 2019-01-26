@@ -45,11 +45,11 @@ public class DialogManager : MonoBehaviour
             if (currentIndex == 1)
             {
                 highway.SetActive(true);
+                home.SetActive(false);
             }
             else if (currentIndex == 2)
             {
                 highway.SetActive(false);
-                home.SetActive(false);
                 enemy.SetActive(true);
             }
             else if (currentIndex == 3)
