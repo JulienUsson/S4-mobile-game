@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
 {
     public GameObject home;
     public GameObject enemy;
+    public GameObject highway;
     public Image speakerImage;
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI contentText;
@@ -41,8 +42,13 @@ public class DialogManager : MonoBehaviour
         {
             Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();
-            if (currentIndex == 2)
+            if (currentIndex == 1)
             {
+                highway.SetActive(true);
+            }
+            else if (currentIndex == 2)
+            {
+                highway.SetActive(false);
                 home.SetActive(false);
                 enemy.SetActive(true);
             }
