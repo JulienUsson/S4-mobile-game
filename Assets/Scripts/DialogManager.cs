@@ -7,7 +7,8 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject Home;
+    public GameObject happyHome;
+    public GameObject hitHome;
     public GameObject Enemy;
     public Image speakerImage;
     public TextMeshProUGUI speakerText;
@@ -24,7 +25,6 @@ public class DialogManager : MonoBehaviour
     {
         generalSprite = Resources.Load<Sprite>("general");
         alienSprite = Resources.Load<Sprite>("alien");
-        homeInitPos = Home.transform.position;
         currentIndex = -1;
         dialogs = new List<Dialog>();
         dialogs.Add(new Dialog() { speaker = "alien", content = "Dumb aliens ! What are you still doing here ? We have noticed you 10 years ago that you must have evacuated your planet by today," });
@@ -43,23 +43,24 @@ public class DialogManager : MonoBehaviour
             setNextDialog();
             if (currentIndex == 2)
             {
-                Home.SetActive(false);
+                happyHome.SetActive(false);
                 Enemy.SetActive(true);
             }
             else if (currentIndex == 3)
             {
-                Home.SetActive(true);
+                hitHome.SetActive(true);
                 Enemy.SetActive(false);
             }
             else if (currentIndex == 4)
             {
-                Home.transform.SetPositionAndRotation(homeInitPos, Quaternion.identity);
+                hitHome.SetActive(false);
+                happyHome.SetActive(true);
             }
         }
         if (currentIndex == 3)
         {
-            float newX = Home.transform.position.x + Mathf.Sin(Time.time * speed) * amount;
-            Home.transform.SetPositionAndRotation(new Vector3(newX, Home.transform.position.y, Home.transform.position.z), Quaternion.identity);
+            float newX = hitHome.transform.position.x + Mathf.Sin(Time.time * speed) * amount;
+            hitHome.transform.SetPositionAndRotation(new Vector3(newX, hitHome.transform.position.y, hitHome.transform.position.z), Quaternion.identity);
         }
     }
 
