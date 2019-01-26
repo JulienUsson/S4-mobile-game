@@ -66,8 +66,6 @@ public class DialogManager : MonoBehaviour
         if (currentIndex == 3)
         {
             float newX = Mathf.Sin(Time.time * speed) * amount;
-            Debug.Log(newX);
-            Debug.Log(home.transform.position);
             home.transform.position += new Vector3(newX, 0, 0);
         }
     }
