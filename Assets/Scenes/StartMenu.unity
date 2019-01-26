@@ -463,17 +463,44 @@ PrefabInstance:
     - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
         type: 3}
       propertyPath: m_text
-      value: Back
+      value: BACK
       objectReference: {fileID: 0}
     - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d4901add93a8e48628e4a37544bed6bf,
+        type: 2}
+    - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21513379968811038, guid: d4901add93a8e48628e4a37544bed6bf,
+        type: 2}
+    - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357088795561928110, guid: 503a381148d1a4f7fb66398a4b8856b9,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503a381148d1a4f7fb66398a4b8856b9, type: 3}
@@ -1131,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1104541988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1348,7 +1375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1951787865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1455,8 +1482,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4901add93a8e48628e4a37544bed6bf, type: 2}
+  m_sharedMaterial: {fileID: 21513379968811038, guid: d4901add93a8e48628e4a37544bed6bf,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1481,8 +1509,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1492,7 +1520,7 @@ MonoBehaviour:
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
