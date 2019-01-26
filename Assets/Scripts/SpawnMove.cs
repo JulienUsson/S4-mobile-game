@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnMove : MonoBehaviour
 {
-    public float moveSpeed = 600f;
+    public float moveSpeed = 200f;
     public GameObject ennemy;
     private float nextSpawn;
     public float spawnRate;
