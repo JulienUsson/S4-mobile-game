@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 724998817}
   - component: {fileID: 724998818}
   - component: {fileID: 724998819}
+  - component: {fileID: 724998821}
+  - component: {fileID: 724998820}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -204,7 +206,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 724998814}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -213,7 +215,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &724998818
 MonoBehaviour:
@@ -235,10 +237,10 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724998814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -251,6 +253,34 @@ EdgeCollider2D:
   - {x: 0.024289787, y: 0.09840393}
   - {x: 0.068569385, y: 0.06667137}
   - {x: 0.1, y: 0}
+--- !u!114 &724998820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724998814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068481a431352e339a746b0867fd4523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &724998821
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724998814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.25, y: 0.35}
+  m_Direction: 1
 --- !u!1 &760389154
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 4619689094561708703, guid: 3b7e1e772a4a40343a7621322ccced15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.31445312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4619689094561708703, guid: 3b7e1e772a4a40343a7621322ccced15,
         type: 3}
