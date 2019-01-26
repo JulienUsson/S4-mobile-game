@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,11 +11,21 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait = 3;
+    public float timerLeft = 30f;
+    public TextMeshProUGUI timerText;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnWaves()); 
+        StartCoroutine(SpawnWaves());
+    }
+
+    private void Update()
+    {
+        timerLeft -= Time.deltaTime;
+        timerText.text = Mathf.Round(timerLeft).ToString();
+        if (timerLeft <= 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator SpawnWaves()
