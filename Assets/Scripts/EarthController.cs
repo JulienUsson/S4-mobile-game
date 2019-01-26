@@ -30,6 +30,5 @@ public class EarthController : MonoBehaviour
         
         if (earthPV < 1)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 }
