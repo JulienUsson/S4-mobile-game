@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public float waveWait = 3;
     public float timerLeft = 30f;
     public TextMeshProUGUI timerText;
+    public float BaseEnnemyMove = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +36,15 @@ public class GameController : MonoBehaviour
         {
             for (int i = 0; i < numberOfSpawns; i++)
             {
-                Debug.Log("IValue: " + i);
                 bool isLeft = (Random.value > 0.5f);
                 Vector3 spawnPosition = new Vector3((isLeft) ?  -spawnValues.x : spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+                ennemy.gameObject.GetComponent<EnnemyMover>().movespeed = BaseEnnemyMove * Time.fixedDeltaTime;
                 Instantiate(ennemy, spawnPosition, Quaternion.identity);
+                BaseEnnemyMove += 10;
                 yield return new WaitForSeconds(spawnWait);
+
+                spawnWait -= 0.01f;
+
             }
             yield return new WaitForSeconds(waveWait);
         }

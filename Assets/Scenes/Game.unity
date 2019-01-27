@@ -656,6 +656,7 @@ MonoBehaviour:
   waveWait: 4
   timerLeft: 20
   timerText: {fileID: 1642589388}
+  BaseEnnemyMove: 100
 --- !u!1 &1560781369
 GameObject:
   m_ObjectHideFlags: 0
