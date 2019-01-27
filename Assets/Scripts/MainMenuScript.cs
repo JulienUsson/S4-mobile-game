@@ -17,7 +17,7 @@ public class MainMenuScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown && !Input.GetKey(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
+        if (Input.anyKeyDown && !Input.GetKey(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1) && !Input.GetKey(KeyCode.Escape))
         {
             this.PlayGame();
         }
