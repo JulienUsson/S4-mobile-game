@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834ac5d581af24d88983848dcc0ddfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qteNumber: 11
+  qteNumber: 13
   qteImage: {fileID: 274091263}
   failImage: {fileID: 578772260}
   qteAnimationTime: 0.1
