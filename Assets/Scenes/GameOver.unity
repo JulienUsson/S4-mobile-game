@@ -792,7 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77c292137b6744bbbf76c4d2c88287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delta: 1
   earthAnimator: {fileID: 1217320693}
+  earth: {fileID: 1217320691}
   canvas: {fileID: 574956858}
   highway: {fileID: 1879105533}
 --- !u!4 &954693060

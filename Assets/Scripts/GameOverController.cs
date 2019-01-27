@@ -8,6 +8,7 @@ public class GameOverController : MonoBehaviour
 {
     public float delta = 1f;
     public Animator earthAnimator;
+    public GameObject earth;
     public GameObject canvas;
     public GameObject highway;
     private bool animationDone = false;
@@ -21,6 +22,7 @@ public class GameOverController : MonoBehaviour
         {
             animationDone = true;
             canvas.SetActive(true);
+            earth.SetActive(false);
             highway.SetActive(true);
         }
         if (animationDone && Input.anyKeyDown && delta <= 0f)
