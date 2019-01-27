@@ -25,7 +25,7 @@ public class GameOverController : MonoBehaviour
             earth.SetActive(false);
             highway.SetActive(true);
         }
-        if (animationDone && Input.anyKeyDown && Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
+        if (animationDone && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
             SceneManager.LoadScene(1);
             return;
