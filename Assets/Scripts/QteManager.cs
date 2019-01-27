@@ -13,6 +13,7 @@ public class QteManager : MonoBehaviour
     public float qteAnimationTime = 0.3f;
     public float qteTime = 5f;
     public float failTime = 0.5f;
+    public float timerToWin = 2.5f;
 
     private List<XboxKeyEnum> keys;
     private Sprite aSprite;
@@ -41,6 +42,11 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (keys.Count == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
         if (qteTime > 0)
         {
             qteTime -= Time.deltaTime;
@@ -67,12 +73,7 @@ public class QteManager : MonoBehaviour
             }
         }
 
-        if (keys.Count == 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
-
+        
         XboxKeyEnum currentKey = keys[0];
 
         if ((Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
@@ -131,5 +132,11 @@ public class QteManager : MonoBehaviour
         {
             qteImage.enabled = false;
         }
+    }
+
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(timerToWin);
     }
 }
