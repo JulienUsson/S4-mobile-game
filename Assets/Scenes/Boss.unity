@@ -327,9 +327,12 @@ MonoBehaviour:
   qteImage: {fileID: 274091263}
   failImage: {fileID: 578772260}
   qteAnimationTime: 0.1
-  qteTime: 10
+  qteTime: 5
   failTime: 1
+  timerToWin: 2.5
   fail: 0
+  anim: {fileID: 1044695577}
+  lapinou: {fileID: 838685572}
 --- !u!1001 &740557202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,7 +358,7 @@ PrefabInstance:
     - target: {fileID: 6236942342312573944, guid: ea4d43d3543134d60ae2d9525a4572ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0490475
+      value: -6.02
       objectReference: {fileID: 0}
     - target: {fileID: 6236942342312573944, guid: ea4d43d3543134d60ae2d9525a4572ed,
         type: 3}
@@ -551,8 +554,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044695574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3, y: 0.2, z: 2.0490475}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 19.9, y: 0, z: -0.24}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -599,7 +602,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.52, y: 4.84}
+  m_Size: {x: 34.52, y: 4.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
