@@ -104,7 +104,7 @@ public class QteManager : MonoBehaviour
         {
             fail = failTime;
             failImage.enabled = true;
-            life = -1;
+            life -= 1;
             return;
         }
 
