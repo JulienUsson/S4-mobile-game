@@ -652,7 +652,7 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 1
   waveWait: 4
-  timerLeft: 30
+  timerLeft: 20
   timerText: {fileID: 1642589388}
 --- !u!1 &1560781369
 GameObject:
