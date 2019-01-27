@@ -75,10 +75,10 @@ public class QteManager : MonoBehaviour
 
         XboxKeyEnum currentKey = keys[0];
 
-        if (Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
+        if ((Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
       || Input.GetButtonDown("XboxB") && currentKey != XboxKeyEnum.XBOX_B
       || Input.GetButtonDown("XboxX") && currentKey != XboxKeyEnum.XBOX_X
-      || Input.GetButtonDown("XboxY") && currentKey != XboxKeyEnum.XBOX_Y)
+      || Input.GetButtonDown("XboxY") && currentKey != XboxKeyEnum.XBOX_Y) && fail <= 0f)
         {
             fail = failTime;
             failImage.enabled = true;
@@ -86,11 +86,11 @@ public class QteManager : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown("XboxA") && currentKey == XboxKeyEnum.XBOX_A
+        if ((Input.GetButtonDown("XboxA") && currentKey == XboxKeyEnum.XBOX_A
         || Input.GetButtonDown("XboxB") && currentKey == XboxKeyEnum.XBOX_B
         || Input.GetButtonDown("XboxX") && currentKey == XboxKeyEnum.XBOX_X
-        || Input.GetButtonDown("XboxY") && currentKey == XboxKeyEnum.XBOX_Y
-        && fail <= 0)
+        || Input.GetButtonDown("XboxY") && currentKey == XboxKeyEnum.XBOX_Y)
+        && fail <= 0f)
         {
             keys.RemoveAt(0);
             qteAnimation = qteAnimationTime;
