@@ -17,18 +17,21 @@ public class EarthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    IEnumerator TimerWaiting()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        earthPV --;
-
-        anim.SetBool("Hitted", true);
-
+        earthPV--;
         anim.SetInteger("PV", earthPV);
-        
+
         if (earthPV < 1)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
     }
 }
