@@ -13,6 +13,7 @@ public class AlarmAnimationScript : MonoBehaviour
     {
         initialPosition = this.transform.position;
         this.transform.position += new Vector3(distance, 0, 0);
+        StartCoroutine(Timer());
     }
 
     // Update is called once per frame
@@ -22,11 +23,11 @@ public class AlarmAnimationScript : MonoBehaviour
         {
             this.transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
         }
+    }
 
-        if (Input.anyKeyDown)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
