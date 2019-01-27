@@ -48,7 +48,7 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life < 0)
+        if (life <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             return;
