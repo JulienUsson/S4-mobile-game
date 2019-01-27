@@ -19,12 +19,7 @@ public class EarthController : MonoBehaviour
     {
 
     }
-
-    IEnumerator TimerWaiting()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         earthPV--;
