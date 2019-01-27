@@ -7,6 +7,7 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
+    public float delta = 1f;
     public GameObject home;
     public GameObject enemy;
     public GameObject highway;
@@ -38,7 +39,11 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (delta > 0)
+        {
+            delta -= Time.deltaTime;
+        }
+        if (Input.anyKeyDown && delta <= 0f)
         {
             Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();
