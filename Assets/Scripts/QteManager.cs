@@ -9,12 +9,14 @@ public class QteManager : MonoBehaviour
 {
     public int qteNumber = 10;
     public Image qteImage;
+    public float qteAnimationTime = 0.3f;
 
     private List<XboxKeyEnum> keys;
     private Sprite aSprite;
     private Sprite bSprite;
     private Sprite xSprite;
     private Sprite ySprite;
+    private float qteAnimation = 0f;
 
     void Start()
     {
@@ -35,6 +37,15 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (qteAnimation > 0)
+        {
+            qteAnimation -= Time.deltaTime;
+            if (qteAnimation <= 0)
+            {
+                qteImage.enabled = true;
+            }
+        }
+
         if (keys.Count == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -48,6 +59,8 @@ public class QteManager : MonoBehaviour
         || Input.GetButtonDown("XboxY") && currentKey == XboxKeyEnum.XBOX_Y)
         {
             keys.RemoveAt(0);
+            qteAnimation = qteAnimationTime;
+            qteImage.enabled = false;
             ShowKeys();
         }
     }
