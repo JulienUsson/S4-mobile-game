@@ -11,7 +11,10 @@ public class GameOverController : MonoBehaviour
     public GameObject earth;
     public GameObject canvas;
     public GameObject highway;
+    public GameObject dialog;
+    public GameObject looseText;
     private bool animationDone = false;
+    private bool textDiplayed = false;
     void Update()
     {
         if (delta > 0)
@@ -27,8 +30,16 @@ public class GameOverController : MonoBehaviour
         }
         if (animationDone && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
-            SceneManager.LoadScene(1);
-            return;
+            if (!textDiplayed)
+            {
+                textDiplayed = true;
+                looseText.SetActive(false);
+                dialog.SetActive(true);
+            }
+            else
+            {
+                SceneManager.LoadScene(1);
+            }
         }
 
     }
