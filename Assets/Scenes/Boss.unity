@@ -323,16 +323,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834ac5d581af24d88983848dcc0ddfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qteNumber: 11
+  qteNumber: 1
   qteImage: {fileID: 274091263}
   failImage: {fileID: 578772260}
   qteAnimationTime: 0.1
   qteTime: 5
   failTime: 1
-  timerToWin: 2.5
+  timerToWin: 4
   fail: 0
-  anim: {fileID: 1044695577}
-  lapinou: {fileID: 838685572}
+  sideEarth: {fileID: 1044695577}
 --- !u!1001 &740557202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -528,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   distance: 3
+  isDeafeated: 0
 --- !u!1 &1044695574
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b5ee0afb203af4e2b85a48fcd69f0727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -23,12 +23,15 @@ public class QteManager : MonoBehaviour
     private float qteAnimation = 0f;
     public float fail = 0f;
 
+    public Animator sideEarth;
+
     void Start()
     {
         aSprite = Resources.Load<Sprite>("xbox_a");
         bSprite = Resources.Load<Sprite>("xbox_b");
         xSprite = Resources.Load<Sprite>("xbox_x");
         ySprite = Resources.Load<Sprite>("xbox_y");
+
 
         keys = new List<XboxKeyEnum>();
         for (int i = 0; i < qteNumber; i++)
@@ -44,7 +47,16 @@ public class QteManager : MonoBehaviour
     {
         if (keys.Count == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (timerToWin == 4)
+                sideEarth.SetBool("Fire", true);
+
+            timerToWin -= Time.deltaTime;
+
+            if (timerToWin < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            return;
         }
 
         if (qteTime > 0)
@@ -73,7 +85,7 @@ public class QteManager : MonoBehaviour
             }
         }
 
-        
+
         XboxKeyEnum currentKey = keys[0];
 
         if ((Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
