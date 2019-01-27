@@ -23,10 +23,13 @@ public class QteManager : MonoBehaviour
     private float qteAnimation = 0f;
     public float fail = 0f;
 
+    public int life = 1;
+
     public Animator sideEarth;
 
     void Start()
     {
+        life = EarthController.earthPV;
         aSprite = Resources.Load<Sprite>("xbox_a");
         bSprite = Resources.Load<Sprite>("xbox_b");
         xSprite = Resources.Load<Sprite>("xbox_x");
@@ -45,6 +48,12 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (life < 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            return;
+        }
+
         if (keys.Count == 0)
         {
             if (timerToWin == 4)
@@ -95,6 +104,7 @@ public class QteManager : MonoBehaviour
         {
             fail = failTime;
             failImage.enabled = true;
+            life = -1;
             return;
         }
 
