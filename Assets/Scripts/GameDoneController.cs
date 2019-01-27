@@ -28,6 +28,7 @@ public class GameDoneController : MonoBehaviour
             {
                 SceneManager.LoadScene(1);
             }
+            delta = 1f;
         }
     }
 }

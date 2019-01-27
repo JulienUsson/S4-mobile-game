@@ -67,6 +67,7 @@ public class DialogManager : MonoBehaviour
             {
                 homeAnimator.Play("AnimationEarthOk-3pv", 0);
             }
+            delta = 1f;
         }
         if (currentIndex == 3)
         {
