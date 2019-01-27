@@ -7,6 +7,7 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
+    public float delta = 1f;
     public GameObject home;
     public GameObject enemy;
     public GameObject highway;
@@ -38,7 +39,11 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (delta > 0)
+        {
+            delta -= Time.deltaTime;
+        }
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
             Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();
@@ -56,7 +61,7 @@ public class DialogManager : MonoBehaviour
             {
                 home.SetActive(true);
                 enemy.SetActive(false);
-                homeAnimator.Play("AnimationEarth-hit", 0);
+                homeAnimator.Play("AnimationEarthHitted", 0);
             }
             else if (currentIndex == 4)
             {

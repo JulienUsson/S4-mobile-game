@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameDoneController : MonoBehaviour
 {
     public float delta = 1f;
+    public GameObject dialog;
+    public GameObject win;
+    private bool winShowed = false;
 
     void Update()
     {
@@ -13,9 +16,18 @@ public class GameDoneController : MonoBehaviour
         {
             delta -= Time.deltaTime;
         }
-        if (Input.anyKeyDown && delta <= 0f)
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
-            SceneManager.LoadScene(1);
+            if (!winShowed)
+            {
+                winShowed = true;
+                win.SetActive(false);
+                dialog.SetActive(true);
+            }
+            else
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 }

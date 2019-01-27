@@ -20,18 +20,13 @@ public class EarthController : MonoBehaviour
 
     }
 
-    IEnumerator TimerWaiting()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         earthPV--;
         anim.SetInteger("PV", earthPV);
 
         if (earthPV < 1)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(6);
 
     }
 }

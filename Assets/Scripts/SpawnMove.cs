@@ -16,7 +16,9 @@ public class SpawnMove : MonoBehaviour
         if(Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            Instantiate(ennemy, transform.position, transform.rotation);
+            GameObject go = Instantiate(ennemy, transform.position, transform.rotation);
+            go.GetComponent<Rigidbody2D>().AddForce(Vector3.up * moveSpeed);
+            moveSpeed += 10;
         }
     }
 }
