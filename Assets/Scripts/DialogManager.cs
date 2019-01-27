@@ -43,7 +43,7 @@ public class DialogManager : MonoBehaviour
         {
             delta -= Time.deltaTime;
         }
-        if (Input.anyKeyDown && delta <= 0f)
+        if (Input.anyKeyDown && Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
             Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();

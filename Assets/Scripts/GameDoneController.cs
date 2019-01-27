@@ -13,7 +13,7 @@ public class GameDoneController : MonoBehaviour
         {
             delta -= Time.deltaTime;
         }
-        if (Input.anyKeyDown && delta <= 0f)
+        if (Input.anyKeyDown && Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
         {
             SceneManager.LoadScene(1);
         }
