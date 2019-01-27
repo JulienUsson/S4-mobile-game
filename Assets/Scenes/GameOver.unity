@@ -417,7 +417,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: YOU LOSE, LOSER !
+  m_text: YOU LOSE YOUR HOME...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4901add93a8e48628e4a37544bed6bf, type: 2}
   m_sharedMaterial: {fileID: 21513379968811038, guid: d4901add93a8e48628e4a37544bed6bf,
