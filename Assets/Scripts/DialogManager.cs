@@ -61,7 +61,7 @@ public class DialogManager : MonoBehaviour
             {
                 home.SetActive(true);
                 enemy.SetActive(false);
-                homeAnimator.Play("AnimationEarth-hit", 0);
+                homeAnimator.Play("AnimationEarthHitted", 0);
             }
             else if (currentIndex == 4)
             {
