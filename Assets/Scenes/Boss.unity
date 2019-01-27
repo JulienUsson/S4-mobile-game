@@ -252,6 +252,7 @@ MonoBehaviour:
   qteNumber: 12
   qteImage: {fileID: 274091263}
   qteAnimationTime: 0.1
+  qteTime: 7
 --- !u!1001 &740557202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f1b65e2061e4fb79b025000f305c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   distance: 3
 --- !u!1 &1044695574
 GameObject:

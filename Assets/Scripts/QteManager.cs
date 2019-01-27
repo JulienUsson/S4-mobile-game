@@ -10,6 +10,7 @@ public class QteManager : MonoBehaviour
     public int qteNumber = 10;
     public Image qteImage;
     public float qteAnimationTime = 0.3f;
+    public float qteTime = 5f;
 
     private List<XboxKeyEnum> keys;
     private Sprite aSprite;
@@ -37,6 +38,15 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (qteTime > 0)
+        {
+            qteTime -= Time.deltaTime;
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+
         if (qteAnimation > 0)
         {
             qteAnimation -= Time.deltaTime;
