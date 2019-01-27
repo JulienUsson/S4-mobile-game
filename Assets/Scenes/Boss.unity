@@ -323,13 +323,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834ac5d581af24d88983848dcc0ddfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qteNumber: 12
+  qteNumber: 11
   qteImage: {fileID: 274091263}
   failImage: {fileID: 578772260}
   qteAnimationTime: 0.1
   qteTime: 10
   failTime: 1
+  timerToWin: 4
   fail: 0
+  sideEarth: {fileID: 1044695577}
 --- !u!1001 &740557202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 6236942342312573944, guid: ea4d43d3543134d60ae2d9525a4572ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0490475
+      value: -6.02
       objectReference: {fileID: 0}
     - target: {fileID: 6236942342312573944, guid: ea4d43d3543134d60ae2d9525a4572ed,
         type: 3}
@@ -415,6 +417,102 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 740557202}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &838685573
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838685572}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e885d1d9b6d4026f1af82f7fdcd3ed15, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &838685576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   distance: 3
+  isDeafeated: 0
 --- !u!1 &1044695574
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,8 +554,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044695574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3, y: 0.2, z: 2.0490475}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 19.9, y: 0, z: -0.24}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -497,13 +596,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b5ee0afb203af4e2b85a48fcd69f0727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.52, y: 4.84}
+  m_Size: {x: 34.52, y: 4.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

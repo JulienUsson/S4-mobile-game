@@ -13,6 +13,7 @@ public class QteManager : MonoBehaviour
     public float qteAnimationTime = 0.3f;
     public float qteTime = 5f;
     public float failTime = 0.5f;
+    public float timerToWin = 2.5f;
 
     private List<XboxKeyEnum> keys;
     private Sprite aSprite;
@@ -22,12 +23,18 @@ public class QteManager : MonoBehaviour
     private float qteAnimation = 0f;
     public float fail = 0f;
 
+    public int life = 1;
+
+    public Animator sideEarth;
+
     void Start()
     {
+        life = EarthController.earthPV;
         aSprite = Resources.Load<Sprite>("xbox_a");
         bSprite = Resources.Load<Sprite>("xbox_b");
         xSprite = Resources.Load<Sprite>("xbox_x");
         ySprite = Resources.Load<Sprite>("xbox_y");
+
 
         keys = new List<XboxKeyEnum>();
         for (int i = 0; i < qteNumber; i++)
@@ -41,6 +48,26 @@ public class QteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (life <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            return;
+        }
+
+        if (keys.Count == 0)
+        {
+            if (timerToWin == 4)
+                sideEarth.SetBool("Fire", true);
+
+            timerToWin -= Time.deltaTime;
+
+            if (timerToWin < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            return;
+        }
+
         if (qteTime > 0)
         {
             qteTime -= Time.deltaTime;
@@ -67,30 +94,26 @@ public class QteManager : MonoBehaviour
             }
         }
 
-        if (keys.Count == 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
 
         XboxKeyEnum currentKey = keys[0];
 
-        if (Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
+        if ((Input.GetButtonDown("XboxA") && currentKey != XboxKeyEnum.XBOX_A
       || Input.GetButtonDown("XboxB") && currentKey != XboxKeyEnum.XBOX_B
       || Input.GetButtonDown("XboxX") && currentKey != XboxKeyEnum.XBOX_X
-      || Input.GetButtonDown("XboxY") && currentKey != XboxKeyEnum.XBOX_Y)
+      || Input.GetButtonDown("XboxY") && currentKey != XboxKeyEnum.XBOX_Y) && fail <= 0f)
         {
             fail = failTime;
             failImage.enabled = true;
+            life -= 1;
             return;
         }
 
 
-        if (Input.GetButtonDown("XboxA") && currentKey == XboxKeyEnum.XBOX_A
+        if ((Input.GetButtonDown("XboxA") && currentKey == XboxKeyEnum.XBOX_A
         || Input.GetButtonDown("XboxB") && currentKey == XboxKeyEnum.XBOX_B
         || Input.GetButtonDown("XboxX") && currentKey == XboxKeyEnum.XBOX_X
-        || Input.GetButtonDown("XboxY") && currentKey == XboxKeyEnum.XBOX_Y
-        && fail <= 0)
+        || Input.GetButtonDown("XboxY") && currentKey == XboxKeyEnum.XBOX_Y)
+        && fail <= 0f)
         {
             keys.RemoveAt(0);
             qteAnimation = qteAnimationTime;
@@ -131,5 +154,11 @@ public class QteManager : MonoBehaviour
         {
             qteImage.enabled = false;
         }
+    }
+
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(timerToWin);
     }
 }

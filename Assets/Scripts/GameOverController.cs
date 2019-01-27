@@ -40,6 +40,7 @@ public class GameOverController : MonoBehaviour
             {
                 SceneManager.LoadScene(1);
             }
+            delta = 1f;
         }
 
     }

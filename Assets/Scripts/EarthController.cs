@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EarthController : MonoBehaviour
 {
-    public int earthPV = 3;
+    static public int earthPV = 3;
     private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        earthPV = 3;
         anim = GetComponent<Animator>();
     }
 
