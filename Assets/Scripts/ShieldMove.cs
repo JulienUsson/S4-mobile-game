@@ -19,7 +19,26 @@ public class ShieldMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float axis = Input.GetAxisRaw("Horizontal");
+
+        if (Input.touchCount > 0)
+        {
+            foreach (var touch in Input.touches)
+            {
+                if (touch.position.x < Screen.width / 2)
+                {
+                    axis -= 1f;
+                }
+                else if (touch.position.x > Screen.width / 2)
+                {
+                    axis += 1f;
+                }
+            }
+        }
+        if (axis < -1) axis = -1;
+        if (axis > 1) axis = 1;
+
         if (axis != 0)
         {
             direction = Mathf.Sign(axis) * -1;
@@ -28,17 +47,15 @@ public class ShieldMove : MonoBehaviour
                 speed += Mathf.Abs(axis) + acceleration;
             }
         }
-        else
+        else if (Mathf.Abs(speed) > 0)
         {
-            if (Mathf.Abs(speed) > 0)
+            speed -= deceleration;
+            if (speed < 0)
             {
-                speed -= deceleration;
-                if (speed < 0)
-                {
-                    speed = 0;
-                }
+                speed = 0;
             }
         }
+
     }
 
     void FixedUpdate()
