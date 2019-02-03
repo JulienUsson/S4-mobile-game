@@ -5,48 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public float radius = 5f;
+    public float baseEnnemyMove = 1f;
     public GameObject ennemy;
-    public int numberOfSpawns = 2;
-    public Vector3 spawnValues;
-    public float spawnWait;
-    public float startWait;
-    public float waveWait = 3;
-    public float timerLeft = 30f;
-    public TextMeshProUGUI timerText;
-    public float BaseEnnemyMove = 1f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(SpawnWaves());
-    }
+    public TextMeshProUGUI scoreText;
+    private float score = 0;
+    private double nextSpawnTime = 0;
 
     private void Update()
     {
-        timerLeft -= Time.deltaTime;
-        timerText.text = Mathf.Round(timerLeft).ToString();
-        if (timerLeft <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        score += Time.deltaTime;
+        scoreText.text = Mathf.Round(score).ToString();
+
+        if (nextSpawnTime < 0)
+        {
+            Vector3 spawnPosition = GenerateRandomPosition();
+            ennemy.GetComponent<EnnemyMover>().movespeed = baseEnnemyMove;
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, spawnPosition) * Quaternion.Euler(0, 0, spawnPosition.x < 0 ? -90 : 90); ;
+            Instantiate(ennemy, spawnPosition, rotation);
+            nextSpawnTime = Random.value * 2.5 + 1;
+        }
+
+        baseEnnemyMove += Time.deltaTime / 10;
+        nextSpawnTime -= Time.deltaTime;
     }
 
-    IEnumerator SpawnWaves()
+    private Vector3 GenerateRandomPosition()
     {
-        yield return new WaitForSeconds(startWait);
-        while (true)
-        {
-            for (int i = 0; i < numberOfSpawns; i++)
-            {
-                bool isLeft = (Random.value > 0.5f);
-                Vector3 spawnPosition = new Vector3((isLeft) ?  -spawnValues.x : spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                ennemy.gameObject.GetComponent<EnnemyMover>().movespeed = BaseEnnemyMove * Time.fixedDeltaTime;
-                Instantiate(ennemy, spawnPosition, Quaternion.identity);
-                BaseEnnemyMove += 10;
-                yield return new WaitForSeconds(spawnWait);
-
-                spawnWait -= 0.01f;
-
-            }
-            yield return new WaitForSeconds(waveWait);
-        }
+        float angle = Random.value * Mathf.PI * 2;
+        return new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
     }
 }

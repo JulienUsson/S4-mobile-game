@@ -21,9 +21,11 @@ public class DialogManager : MonoBehaviour
     private Sprite generalSprite;
     private Sprite alienSprite;
     private Vector3 homeInitPos;
+    public float currentDelta;
 
     void Start()
     {
+        currentDelta = delta;
         generalSprite = Resources.Load<Sprite>("general");
         alienSprite = Resources.Load<Sprite>("alien");
         currentIndex = -1;
@@ -39,11 +41,11 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (delta > 0)
+        if (currentDelta > 0)
         {
-            delta -= Time.deltaTime;
+            currentDelta -= Time.deltaTime;
         }
-        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && currentDelta <= 0f)
         {
             Animator homeAnimator = home.GetComponent<Animator>();
             setNextDialog();
@@ -67,7 +69,7 @@ public class DialogManager : MonoBehaviour
             {
                 homeAnimator.Play("AnimationEarthOk-3pv", 0);
             }
-            delta = 1f;
+            currentDelta = delta;
         }
         if (currentIndex == 3)
         {

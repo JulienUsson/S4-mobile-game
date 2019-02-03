@@ -642,15 +642,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903f64b152096ba4b8676b6f3cefa269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 10
+  baseEnnemyMove: 1
   ennemy: {fileID: 7109248370775604355, guid: 6d5acf7d930a04d428175ba006811cba, type: 3}
-  numberOfSpawns: 20
-  spawnValues: {x: 7.59, y: 5.92, z: 0}
-  spawnWait: 1
-  startWait: 1
-  waveWait: 4
-  timerLeft: 20
-  timerText: {fileID: 1642589388}
-  BaseEnnemyMove: 100
+  scoreText: {fileID: 1642589388}
 --- !u!1 &1560781369
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +757,7 @@ GameObject:
   - component: {fileID: 1642589389}
   - component: {fileID: 1642589388}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,8 +779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 778, y: 425}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 266, y: 160.19}
+  m_SizeDelta: {x: 236.3, y: 78.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642589388
 MonoBehaviour:
@@ -836,14 +831,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 260
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -999,6 +994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835766454}
   - component: {fileID: 1835766453}
+  - component: {fileID: 1835766455}
   - component: {fileID: 1835766452}
   m_Layer: 0
   m_Name: Canvas
@@ -1065,6 +1061,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1835766455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835766451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &2010994210
 GameObject:
   m_ObjectHideFlags: 0

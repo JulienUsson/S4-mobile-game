@@ -15,11 +15,16 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void Update()
     {
-        if (Input.anyKeyDown && !Input.GetKey(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1) && !Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
-            this.PlayGame();
+            this.QuitGame();
         }
     }
 }

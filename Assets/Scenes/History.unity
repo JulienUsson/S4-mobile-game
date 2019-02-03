@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57deb597a6ff64e49a9dd387884062ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 1
+  delta: 0.2
   home: {fileID: 1579006519}
   enemy: {fileID: 981578573}
   highway: {fileID: 1006026888}
@@ -656,6 +656,7 @@ MonoBehaviour:
   contentText: {fileID: 1093064031}
   speed: 50
   amount: 0.1
+  currentDelta: 0
 --- !u!1 &1579006519 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442189026433116258, guid: 14c0757bca6c69e5fb960823b9e8a4a5,
