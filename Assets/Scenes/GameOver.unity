@@ -696,6 +696,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 857148673574441072, guid: a61d883320e254ec185cfa5d978e71af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc50a451fea654be9b46b3219d7faeac,
+        type: 3}
     - target: {fileID: 857148673286447151, guid: a61d883320e254ec185cfa5d978e71af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -801,32 +807,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 857148673574441072, guid: a61d883320e254ec185cfa5d978e71af,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fc50a451fea654be9b46b3219d7faeac,
-        type: 3}
-    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
-        type: 3}
-      propertyPath: m_text
-      value: 'ALIEN :'
-      objectReference: {fileID: 0}
-    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 857148672587732736, guid: a61d883320e254ec185cfa5d978e71af,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -883,6 +863,26 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 65011065}
+    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
+        type: 3}
+      propertyPath: m_text
+      value: 'ALIEN :'
+      objectReference: {fileID: 0}
+    - target: {fileID: 857148672565691676, guid: a61d883320e254ec185cfa5d978e71af,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 857148672587732737, guid: a61d883320e254ec185cfa5d978e71af,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1080,7 +1080,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

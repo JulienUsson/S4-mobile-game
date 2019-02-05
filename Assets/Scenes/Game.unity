@@ -295,8 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6632d94600023b039a7477a6598fd462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 250
-  acceleration: 40
+  maxSpeed: 300
+  acceleration: 25
   deceleration: 50
 --- !u!95 &724998819
 Animator:
@@ -347,10 +347,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.17195494, y: -0.64358556}
-  - {x: -0.32965112, y: -0.16112079}
-  - {x: -0.32544962, y: 0.14869142}
-  - {x: -0.1740159, y: 0.6561316}
+  - {x: -0.18948919, y: -0.5094467}
+  - {x: -0.3162939, y: -0.14988436}
+  - {x: -0.3120134, y: 0.14594817}
+  - {x: -0.14676394, y: 0.5835428}
 --- !u!1 &760389154
 GameObject:
   m_ObjectHideFlags: 0
