@@ -9,7 +9,6 @@ public class DestroyByContact : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Instantiate(Explosion, other.transform.position, other.transform.rotation);
-
         Destroy(other.gameObject);
     }
 }

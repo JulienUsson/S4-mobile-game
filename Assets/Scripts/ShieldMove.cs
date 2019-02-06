@@ -10,13 +10,6 @@ public class ShieldMove : MonoBehaviour
     private float speed = 0f;
     private float direction = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -36,21 +29,19 @@ public class ShieldMove : MonoBehaviour
                 }
             }
         }
-        if (axis < -1) axis = -1;
-        if (axis > 1) axis = 1;
 
         if (axis != 0)
         {
             direction = Mathf.Sign(axis) * -1;
             if (Mathf.Abs(speed) < maxSpeed)
             {
-                speed += Mathf.Abs(axis) + acceleration;
+                speed += direction * acceleration * Time.deltaTime;
             }
         }
         else if (Mathf.Abs(speed) > 0)
         {
-            speed -= deceleration;
-            if (speed < 0)
+            speed -= direction * deceleration * Time.deltaTime;
+            if (speed * direction < 0)
             {
                 speed = 0;
             }
@@ -60,6 +51,6 @@ public class ShieldMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.RotateAround(Vector3.zero, Vector3.forward, speed * direction * Time.fixedDeltaTime);
+        transform.RotateAround(Vector3.zero, Vector3.forward, speed * Time.fixedDeltaTime);
     }
 }

@@ -15,19 +15,14 @@ public class EarthController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         earthPV--;
         anim.SetInteger("PV", earthPV);
 
         if (earthPV < 1)
+        {
             SceneManager.LoadScene(6);
-
+        }
     }
 }

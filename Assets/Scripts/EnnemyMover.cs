@@ -4,18 +4,14 @@ public class EnnemyMover : MonoBehaviour
 {
     public float movespeed = 5;
     public float acceleration = 1f;
-    public Transform earth;
-    SpriteRenderer sprite;
-    Rigidbody2D rb;
 
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
         if (transform.position.x > 0)
         {
-            sprite.flipX = true;
+            sprite.flipY = true;
         }
     }
 
@@ -23,10 +19,7 @@ public class EnnemyMover : MonoBehaviour
     void Update()
     {
         float step = movespeed * Time.fixedDeltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, earth.position, step);
-        rb.AddForce(Vector3.up * 500);
-
+        transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, step);
         movespeed += acceleration * Time.deltaTime;
     }
 }

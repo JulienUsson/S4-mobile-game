@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public float baseEnnemyMove = 1f;
     public GameObject ennemy;
     public TextMeshProUGUI scoreText;
+    public float ennemyMoveAcceleration = 0.1f;
     private float score = 0;
     private double nextSpawnTime = 0;
 
@@ -21,12 +22,12 @@ public class GameController : MonoBehaviour
         {
             Vector3 spawnPosition = GenerateRandomPosition();
             ennemy.GetComponent<EnnemyMover>().movespeed = baseEnnemyMove;
-            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, spawnPosition) * Quaternion.Euler(0, 0, spawnPosition.x < 0 ? -90 : 90); ;
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, spawnPosition) * Quaternion.Euler(0, 0, spawnPosition.x < 0 ? -90 : -90); ;
             Instantiate(ennemy, spawnPosition, rotation);
             nextSpawnTime = Random.value * 2.5 + 1;
         }
 
-        baseEnnemyMove += Time.deltaTime / 10;
+        baseEnnemyMove += Time.deltaTime * ennemyMoveAcceleration;
         nextSpawnTime -= Time.deltaTime;
     }
 

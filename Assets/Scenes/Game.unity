@@ -191,8 +191,8 @@ GameObject:
   - component: {fileID: 724998817}
   - component: {fileID: 724998818}
   - component: {fileID: 724998820}
-  - component: {fileID: 724998821}
   - component: {fileID: 724998819}
+  - component: {fileID: 724998821}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -256,8 +256,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724998814}
   m_LocalRotation: {x: 0, y: 0, z: -0.7087708, w: 0.7054388}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.6, z: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6632d94600023b039a7477a6598fd462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 300
-  acceleration: 25
-  deceleration: 50
+  maxSpeed: 400
+  acceleration: 1000
+  deceleration: 2000
 --- !u!95 &724998819
 Animator:
   serializedVersion: 3
@@ -331,8 +331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosion: {fileID: 9020523418718311970, guid: 4555ae769c574e5d3a2d2af7c343ab25,
     type: 3}
---- !u!68 &724998821
-EdgeCollider2D:
+--- !u!61 &724998821
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -344,13 +344,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.20100378, y: 0.0069892406}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8, y: 1.76}
+    newSize: {x: 0.8, y: 1.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.073287696, y: 1.2002828}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.18948919, y: -0.5094467}
-  - {x: -0.3162939, y: -0.14988436}
-  - {x: -0.3120134, y: 0.14594817}
-  - {x: -0.14676394, y: 0.5835428}
 --- !u!1 &760389154
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +652,7 @@ MonoBehaviour:
   baseEnnemyMove: 1
   ennemy: {fileID: 7109248370775604355, guid: 6d5acf7d930a04d428175ba006811cba, type: 3}
   scoreText: {fileID: 1642589388}
+  ennemyMoveAcceleration: 0.01
 --- !u!1 &1560781369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1169,7 @@ Transform:
   m_GameObject: {fileID: 2010994210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1175,7 +1182,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010994210}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1203,7 +1210,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.15
+  m_Radius: 2.524183
 --- !u!114 &2010994215
 MonoBehaviour:
   m_ObjectHideFlags: 0
