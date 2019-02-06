@@ -21,7 +21,7 @@ public class DialogManager : MonoBehaviour
     private Sprite generalSprite;
     private Sprite alienSprite;
     private Vector3 homeInitPos;
-    public float currentDelta;
+    private float currentDelta;
 
     void Start()
     {

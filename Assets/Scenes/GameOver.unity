@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77c292137b6744bbbf76c4d2c88287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 1
+  delta: 0.3
   earthAnimator: {fileID: 1217320693}
   earth: {fileID: 1217320691}
   canvas: {fileID: 574956858}

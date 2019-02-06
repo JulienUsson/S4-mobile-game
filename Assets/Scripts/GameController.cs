@@ -18,13 +18,13 @@ public class GameController : MonoBehaviour
         score += Time.deltaTime;
         scoreText.text = Mathf.Round(score).ToString();
 
-        if (nextSpawnTime < 0)
+        if (nextSpawnTime <= 0)
         {
             Vector3 spawnPosition = GenerateRandomPosition();
             ennemy.GetComponent<EnnemyMover>().movespeed = baseEnnemyMove;
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, spawnPosition) * Quaternion.Euler(0, 0, spawnPosition.x < 0 ? -90 : -90); ;
             Instantiate(ennemy, spawnPosition, rotation);
-            nextSpawnTime = Random.value * 2.5 + 1;
+            nextSpawnTime = Random.value * 2 + 1;
         }
 
         baseEnnemyMove += Time.deltaTime * ennemyMoveAcceleration;

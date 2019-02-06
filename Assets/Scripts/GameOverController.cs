@@ -15,11 +15,18 @@ public class GameOverController : MonoBehaviour
     public GameObject looseText;
     private bool animationDone = false;
     private bool textDiplayed = false;
+    private float currentDelta;
+
+    void Start()
+    {
+        currentDelta = delta;
+    }
+
     void Update()
     {
-        if (delta > 0)
+        if (currentDelta > 0)
         {
-            delta -= Time.deltaTime;
+            currentDelta -= Time.deltaTime;
         }
         if (!animationDone && earthAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
@@ -28,7 +35,7 @@ public class GameOverController : MonoBehaviour
             earth.SetActive(false);
             highway.SetActive(true);
         }
-        if (animationDone && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && delta <= 0f)
+        if (animationDone && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && currentDelta <= 0f)
         {
             if (!textDiplayed)
             {
@@ -40,7 +47,7 @@ public class GameOverController : MonoBehaviour
             {
                 SceneManager.LoadScene(1);
             }
-            delta = 1f;
+            currentDelta = delta;
         }
 
     }

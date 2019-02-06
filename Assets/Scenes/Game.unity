@@ -649,10 +649,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
-  baseEnnemyMove: 1
+  baseEnnemyMove: 0.8
   ennemy: {fileID: 7109248370775604355, guid: 6d5acf7d930a04d428175ba006811cba, type: 3}
   scoreText: {fileID: 1642589388}
-  ennemyMoveAcceleration: 0.01
+  ennemyMoveAcceleration: 0.02
 --- !u!1 &1560781369
 GameObject:
   m_ObjectHideFlags: 0
